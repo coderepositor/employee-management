@@ -1,0 +1,40 @@
+<div class="container contentbody">
+<div class="row">
+    <h2 class="text-center bg-secondary text-white">Employee List</h2>
+</div>
+<table class ="table table-striped table-bordered">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Operations</th>
+    </tr>
+    <tr *ngFor ="let emp of employees">
+        <td>{{emp.firstName}}</td>
+        <td>{{emp.lastName}}</td>
+        <td>{{emp.emailId}}</td>
+        <td>
+            <button 
+            class="btn btn-primary bg-primary" 
+            type="button"
+            (click)="updateEmployee(emp.id)"
+            >
+                Update
+            </button>
+            <button 
+            class="btn btn-danger bg-danger"
+            style="margin-left: 10px;"
+            type="button"
+            (click)="deleteEmployee(emp.id)"
+            >Delete</button>
+            <button 
+            class="btn btn-info bg-info" 
+            style="margin-left: 10px;"
+            type="button"
+            (click)="employeeDetails(emp.id)">
+                View
+            </button>            
+        </td>
+    </tr>
+</table>
+</div>
